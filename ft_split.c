@@ -6,7 +6,7 @@
 /*   By: yjoo <yjoo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 12:35:43 by yjoo              #+#    #+#             */
-/*   Updated: 2021/11/17 18:23:56 by yjoo             ###   ########.fr       */
+/*   Updated: 2021/11/17 18:42:46 by yjoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,19 @@ static size_t	words_count(char const *s, char c)
 	return (word_cnt);
 }
 
+static void	mallocfree(char	**words)
+{
+	size_t	i;
+
+	i = 0;
+	while (words[i])
+	{
+		free(words[i]);
+		i++;
+	}
+	free(words);
+}
+
 static void	words_split(char const *s, char c, char **words)
 {
 	size_t	i;
@@ -50,7 +63,7 @@ static void	words_split(char const *s, char c, char **words)
 				i++;
 			words[j] = (char *)malloc(sizeof(char) * (i - word_start + 1));
 			if (!words[j])
-				return ;
+				return (mallocfree(words));
 			ft_memcpy(words[j], &s[word_start], (i - word_start));
 			words[j][i - word_start] = 0;
 			j++;
