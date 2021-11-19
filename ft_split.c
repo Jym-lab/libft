@@ -6,7 +6,7 @@
 /*   By: yjoo <yjoo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 12:35:43 by yjoo              #+#    #+#             */
-/*   Updated: 2021/11/17 18:42:46 by yjoo             ###   ########.fr       */
+/*   Updated: 2021/11/19 16:39:59 by yjoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ static void	words_split(char const *s, char c, char **words)
 		else
 			i++;
 	}
-	words[i] = 0;
+	words[j] = 0;
 }
 
 char	**ft_split(char const *s, char c)

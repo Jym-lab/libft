@@ -17,6 +17,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	end;
 	char	*trimstr;
 
+	if (!s1)
+		return (NULL);
+	if (!set)
+		return (ft_strdup(s1));
 	start = 0;
 	end = ft_strlen(s1);
 	while (s1[start] && ft_strchr(set, s1[start]))
@@ -25,9 +29,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 		end--;
 	if (start >= end)
 		return (ft_strdup(""));
-	trimstr = (char *)malloc(sizeof(char) * end - start + 1);
+	trimstr = (char *)malloc(sizeof(char) * (end - start + 1));
 	if (!trimstr)
 		return (NULL);
-	ft_strlcat(trimstr, s1 + start, end - start + 1);
+	ft_strlcpy(trimstr, &s1[start], end - start + 1);
 	return (trimstr);
 }
