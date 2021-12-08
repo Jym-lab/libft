@@ -6,12 +6,11 @@
 /*   By: yjoo <yjoo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 17:10:13 by yjoo              #+#    #+#             */
-/*   Updated: 2021/11/17 18:24:49 by yjoo             ###   ########.fr       */
+/*   Updated: 2021/12/08 19:37:01 by yjoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static int	num_count(int n)
 {

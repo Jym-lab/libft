@@ -63,6 +63,7 @@ all: bonus $(NAME)
 
 $(NAME) : $(OBJS)
 		$(LIB) $@ $?
+
 %.o : %.c
 		$(CC) $(CFLAGS) -c $?
 
