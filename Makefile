@@ -42,6 +42,7 @@ SRCS = ft_atoi.c\
 		ft_strmapi.c\
 		ft_strncmp.c\
 		ft_strnstr.c\
+		ft_striteri.c\
 		ft_strrchr.c\
 		ft_strtrim.c\
 		ft_substr.c\
@@ -59,9 +60,15 @@ SRCS_BONUS = ft_lstadd_back.c\
 OBJS = $(SRCS:.c=.o)
 OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 
-all: bonus $(NAME)
+ifdef WITH_BONUS
+	OBJ = $(OBJS) $(OBJS_BONUS)
+else
+	OBJ = $(OBJS)
+endif
 
-$(NAME) : $(OBJS)
+all: $(NAME)
+
+$(NAME) : $(OBJ)
 		$(LIB) $@ $?
 
 %.o : %.c
@@ -75,7 +82,7 @@ fclean: clean
 
 re: fclean all
 
-bonus: $(OBJS_BONUS)
-		$(LIB) $(NAME) $^
+bonus:
+	make WITH_BONUS=1 all
 
 .PHONY: all clean fclean re bonus
