@@ -6,10 +6,10 @@
 /*   By: yjoo <yjoo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 18:42:35 by yjoo              #+#    #+#             */
-/*   Updated: 2021/11/16 18:42:35 by yjoo             ###   ########.fr       */
+/*   Updated: 2021/12/16 16:32:28 by yjoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
